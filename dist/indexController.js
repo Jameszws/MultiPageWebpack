@@ -1,0 +1,1 @@
+webpackJsonp([0],[,function(o,exports,n){o.exports=n(2)},function(o,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var e=t(0);({init:function(){this.getGoodsInfo()},getGoodsInfo:function(){var o={};e.a.getGoodsInfo(o,function(o){})}}).init()}],[1]);

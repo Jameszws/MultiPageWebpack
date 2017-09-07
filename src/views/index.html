@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=0,maximum-scale=1.0,minimum-scale=1.0">    
+</head>
+
+<body>
+    <div>
+        index page
+    </div>
+    <% if(process.env.NODE_ENV=="development"){ %>
+        <script src="../dev/common.js"></script>
+        <script src="../dev/indexController.js"></script>
+    <% }else if(process.env.NODE_ENV=="production"){ %>
+        <script src="../common.js"></script>
+        <script src="../indexController.js"></script>
+    <%}%>
+</body>
+</html>
