@@ -1,6 +1,7 @@
 /*
 * index 控制器
 */
+import "../static/css/common.css";
 import model from "../models/model.js"; //加载数据访问层
 
 var indexController={

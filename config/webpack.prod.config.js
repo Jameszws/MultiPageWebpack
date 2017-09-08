@@ -14,7 +14,7 @@ module.exports = {
     }, //多页应用，多个入口文件
     
     output: {
-        publicPath:"/dev/",
+        publicPath:"/",
         path: path.resolve(__dirname, '..', 'dist'), //打包后的文件存放的地方
         filename: '[name].js' //打包后输出文件的文件名
     },
@@ -28,6 +28,8 @@ module.exports = {
 
     module: {
         loaders: [
+            {test: /\.css$/,loaders: ['style-loader', 'css-loader'],exclude: /node_modules/},
+            {test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},
             {test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/},
         ]
     },
@@ -74,7 +76,7 @@ module.exports = {
             compress: {
                 warnings: false,
                 drop_debugger: true,
-                drop_console: true
+                drop_console: false
             },
             output: {
                 comments: false

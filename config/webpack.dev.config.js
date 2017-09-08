@@ -7,6 +7,7 @@ var commonsPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    
     devtool: 'source-map',
 
     entry:{
@@ -29,6 +30,8 @@ module.exports = {
     
     module: {
         loaders: [
+            {test: /\.css$/,loaders: ['style-loader', 'css-loader'],exclude: /node_modules/},
+            {test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},            
             {test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/},
         ]
     },
