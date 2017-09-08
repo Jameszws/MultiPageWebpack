@@ -21,7 +21,7 @@
 |&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|--css         样式文件 <br/>
 |&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;|--image       图片文件 <br/>
-|&nbsp;&nbsp;&nbsp;|
+|&nbsp;&nbsp;&nbsp;| <br/>
 |&nbsp;&nbsp;&nbsp;|--views     页面<br/>
 |  
 |--package.json  包管理文件 <br/>
