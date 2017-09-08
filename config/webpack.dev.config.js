@@ -24,15 +24,20 @@ module.exports = {
     resolve: { 
         extensions: ['.js'],
         alias: {
-            jquery:  path.resolve(__dirname, '..', 'node_modules/jquery/dist/jquery.min.js')
+            jquery:  path.resolve(__dirname, '..', 'node_modules/jquery/dist/jquery.min.js'),
+            bootstrap:  path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/css/bootstrap.min.css')
         }
     },
     
     module: {
         loaders: [
-            {test: /\.css$/,loaders: ['style-loader', 'css-loader'],exclude: /node_modules/},
-            {test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},            
-            {test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/},
+            { test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/ },
+            { test: /\.css$/,loaders: ['style-loader', 'css-loader'] },
+            { test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+            { test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
         ]
     },
 

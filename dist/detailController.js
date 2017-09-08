@@ -1,1 +1,1 @@
-webpackJsonp([1],{11:function(e,exports,t){e.exports=t(12)},12:function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});i(1);({init:function(){console.log("this is detail controller")}}).init()}},[11]);
+webpackJsonp([1],{24:function(e,exports,t){e.exports=t(25)},25:function(e,t,i){"use strict";Object.defineProperty(t,"__esModule",{value:!0});i(1);({init:function(){console.log("this is detail controller")}}).init()}},[24]);
