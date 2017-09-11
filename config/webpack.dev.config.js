@@ -12,7 +12,7 @@ module.exports = {
 
     entry:{
         indexController:['./src/controllers/indexController.js'],
-        detailController:['./src/controllers/detailController.js'],
+        detailController:['./src/controllers/detailController.js'],        
     }, //多页应用，多个入口文件
     
     output: {
@@ -23,8 +23,7 @@ module.exports = {
     
     resolve: { 
         extensions: ['.js'],
-        alias: {
-            jquery:  path.resolve(__dirname, '..', 'node_modules/jquery/dist/jquery.min.js'),
+        alias: {            
             bootstrap:  path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/css/bootstrap.min.css')
         }
     },
@@ -34,14 +33,20 @@ module.exports = {
             { test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/ },
             { test: /\.css$/,loaders: ['style-loader', 'css-loader'] },
             { test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
-            { test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000" },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?name=images/[name].[ext]" },
+            { test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000&name=images/[name].[ext]" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream&name=images/[name].[ext]" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml&name=images/[name].[ext]" },
         ]
     },
 
     plugins: [
+
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        }),
 
         new webpack.LoaderOptionsPlugin({
             options:{                

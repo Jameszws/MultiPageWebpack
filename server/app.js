@@ -45,6 +45,18 @@ if(NODE_ENV === 'development'){
         });
     });
 
+     router.get('/dist/index', function(req, res){
+        res.render('../dist/views/index.html', {
+            env: NODE_ENV
+        });
+    });
+
+    router.get('/dist/detail', function(req, res){
+        res.render('../dist/views/detail.html', {
+            env: NODE_ENV
+        });
+    });
+
     app.use(router);
 }
 

@@ -1,7 +1,6 @@
 /*
 * 调用API操作
 */
-import $ from "../libs/jquery-vendor/jquery-vendor.js";
 var model = {
     //获取商品信息(测试发送了个空请求)
     getGoodsInfo:function(params,callback){        
