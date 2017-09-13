@@ -5,6 +5,7 @@ var webpack = require("webpack");
 var path = require('path');
 var commonsPlugin = webpack.optimize.CommonsChunkPlugin;
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var fileVersion = new Date().getTime();
 
 module.exports = {    
 
@@ -99,7 +100,8 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV':  JSON.stringify(process.env.NODE_ENV)
-            }
+            },
+            fileVersion:fileVersion //文件版本
         }),
         
         new webpack.HotModuleReplacementPlugin(),

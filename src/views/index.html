@@ -16,8 +16,8 @@
         <script src="../dev/common.js"></script>
         <script src="../dev/indexController.js"></script>
     <% }else if(process.env.NODE_ENV=="production"){ %>
-        <script src="../common.js"></script>
-        <script src="../indexController.js"></script>
+        <script src="../common.js?v=<%=fileVersion%>"></script>
+        <script src="../indexController.js?v=<%=fileVersion%>"></script>
     <%}%>
 </body>
 </html>
