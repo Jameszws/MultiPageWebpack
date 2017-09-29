@@ -1,0 +1,140 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "eruda",
+        "scope": null,
+        "escapedName": "eruda",
+        "name": "eruda",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\wszhang\\ggs\\github\\MultiPageWebpack"
+    ]
+  ],
+  "_cnpm_publish_time": 1504108901845,
+  "_from": "eruda@latest",
+  "_hasShrinkwrap": false,
+  "_id": "eruda@1.2.6",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/eruda",
+  "_nodeVersion": "6.10.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/eruda-1.2.6.tgz_1504108898796_0.8172289342619479"
+  },
+  "_npmUser": {
+    "name": "surunzi",
+    "email": "surunzi@foxmail.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "eruda",
+    "scope": null,
+    "escapedName": "eruda",
+    "name": "eruda",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/eruda/download/eruda-1.2.6.tgz",
+  "_shasum": "c7ac1b33e5fbf26199225e0cdceec8eda187da0d",
+  "_shrinkwrap": null,
+  "_spec": "eruda",
+  "_where": "D:\\wszhang\\ggs\\github\\MultiPageWebpack",
+  "author": {
+    "name": "redhoodsu"
+  },
+  "bugs": {
+    "url": "https://github.com/liriliri/eruda/issues"
+  },
+  "dependencies": {},
+  "description": "Console for Mobile Browsers",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.6.5",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "copy": "^0.3.0",
+    "css-loader": "^0.28.0",
+    "draggabilly": "^2.1.0",
+    "eslint": "^4.5.0",
+    "handlebars": "^4.0.5",
+    "handlebars-loader": "^1.1.4",
+    "jasmine-core": "^2.4.1",
+    "jasmine-jquery": "^2.1.1",
+    "jquery": "^3.1.0",
+    "js-beautify": "^1.6.2",
+    "json-loader": "^0.5.4",
+    "karma": "^1.7.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-jquery": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-wrap-preprocessor": "^0.1.0",
+    "modernizr": "^3.3.1",
+    "node-sass": "^4.5.0",
+    "postcss-class-prefix": "^0.3.0",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.3",
+    "webpack": "^3.5.4",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "c7ac1b33e5fbf26199225e0cdceec8eda187da0d",
+    "size": 269953,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/eruda/download/eruda-1.2.6.tgz"
+  },
+  "eustia": {
+    "files": "src/**/*.es6",
+    "ignore": "**/Info/defInfo.es6",
+    "output": "src/lib/util.js",
+    "exclude": [
+      "createCfg"
+    ],
+    "format": "commonjs"
+  },
+  "gitHead": "121beeffa93efb4e42beac0505bdd37e1b0c97f4",
+  "homepage": "http://eruda.liriliri.io/",
+  "keywords": [
+    "console",
+    "mobile",
+    "debug"
+  ],
+  "license": "MIT",
+  "main": "eruda.js",
+  "maintainers": [
+    {
+      "name": "surunzi",
+      "email": "670785827@qq.com"
+    }
+  ],
+  "name": "eruda",
+  "optionalDependencies": {},
+  "publish_time": 1504108901845,
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liriliri/eruda.git"
+  },
+  "scripts": {
+    "build": "webpack --config script/webpack.dev.js && webpack -p --config script/webpack.release.js",
+    "ci": "npm run lint && npm run build && npm run test",
+    "dev": "webpack-dev-server --config script/webpack.dev.js --host 0.0.0.0",
+    "genScriptUtil": "eustia build script/*.js -o script/util.js",
+    "lint": "eslint --ext .es6 src",
+    "setup": "node script/cpTestLib",
+    "test": "karma start",
+    "utilDoc": "eustia doc src/lib/util.js -f md -o doc/UTIL_API.md -t \"Eruda Util Documentation\""
+  },
+  "version": "1.2.6"
+}

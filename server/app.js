@@ -9,12 +9,12 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var NODE_ENV = process.env.NODE_ENV || 'production';
 var webpackConfig = NODE_ENV =="production"? require('../config/webpack.prod.config.js'):require('../config/webpack.dev.config.js');
 
-app.use('/dist', express.static(path.join(__dirname, 'dist')));
+app.use('/src', express.static(path.resolve(__dirname, "..","src")));
 app.set('port', 8090);
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');
 //设置页面路径
-app.set('views', path.join(__dirname, '/'));
+app.set('views', path.resolve(__dirname, '..'));
 
 if(NODE_ENV === 'development'){
     
@@ -34,13 +34,13 @@ if(NODE_ENV === 'development'){
 
     //*
     router.get('/index', function(req, res){
-        res.render('../src/views/index.html', {
+        res.render('src/views/index.html', {
             env: NODE_ENV
         });
     });
 
     router.get('/detail', function(req, res){
-        res.render('../src/views/detail.html', {
+        res.render('src/views/detail.html', {
             env: NODE_ENV
         });
     });
