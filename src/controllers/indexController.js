@@ -4,23 +4,23 @@
 import "../static/css/common.css";
 import "bootstrap";
 import layer from "../libs/layer/layer.js";
-import model from "../models/model.js"; //加载数据访问层
+import indexModel from "../models/indexModel.js"; //加载数据访问层
 
-var indexController={
+var indexController = {
     
     init:function(){
         console.log("this is index controller");
-        this.getGoodsInfo();
+        this.getPageInfo();
     },
     
-    //获取商品信息
-    getGoodsInfo:function(){
+    //测试接口
+    getPageInfo:function(){
         var params ={};
-        model.getGoodsInfo(params,function(ret){
+        indexModel.getPageInfo(params,function(ret){
             //这里处理接口返回的值
             console.log("这里是请求返回的结果");
         });
     }
-};
+}
 
 indexController.init();

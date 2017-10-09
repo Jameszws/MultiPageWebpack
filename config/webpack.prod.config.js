@@ -20,7 +20,7 @@ module.exports = {
         filename: '[name].js' //打包后输出文件的文件名
     },
 
-     resolve: { 
+    resolve: { 
         extensions: ['.js'],
         alias: {
             bootstrap:  path.resolve(__dirname, '..', 'node_modules/bootstrap/dist/css/bootstrap.min.css')
