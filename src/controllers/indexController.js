@@ -4,23 +4,26 @@
 import "../static/css/common.css";
 import "bootstrap";
 import layer from "../libs/layer/layer.js";
-import indexModel from "../models/indexModel.js"; //加载数据访问层
+import IndexModel from "../models/indexModel.js"; //加载数据访问层
+import BaseController from "./baseController.js";
 
-var indexController = {
-    
-    init:function(){
+const indexModel = new IndexModel();
+
+class IndexController extends BaseController {
+        
+    init(){
         console.log("this is index controller");
         this.getPageInfo();
-    },
+    }
     
     //测试接口
-    getPageInfo:function(){
+    getPageInfo(){
         var params ={};
         indexModel.getPageInfo(params,function(ret){
             //这里处理接口返回的值
-            console.log("这里是请求返回的结果");
+            console.log("请求完成，结果为",ret);
         });
     }
 }
 
-indexController.init();
+new IndexController().init();

@@ -1,10 +1,15 @@
 /*
 * detail 控制器
 */
-var  detailController  = {
-    init:function(){
-        console.log("this is detail controller");    
+import BaseController from "./baseController.js";
+
+class  DetailController extends BaseController {
+    constructor(){
+        super();
+    }
+    init(){
+        console.log("this is detail controller");
     }
 };
 
-detailController.init();
+new DetailController().init();

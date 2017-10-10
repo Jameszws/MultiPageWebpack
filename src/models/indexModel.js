@@ -1,16 +1,20 @@
 /*
 * 调用API操作
 */
-import restApi from '../common/restApi.js';
+import RestApi from '../common/restApi.js';
+const restApi = new RestApi();
 
-var indexModel ={
+class IndexModel {
     //测试请求
-    getPageInfo:function(params,callback){
-        restApi.get("/endtoend-replace-service/api/pagehearderservice/json/GetPageInfo",params,function(ret){
-            //处理数并返回给controller
-            callback && typeof callback == "function" && callback(ret);
-        })
+    getPageInfo(params,callback) {
+        restApi.get({
+            url:"/endtoend-replace-service/api/pagehearderservice/json/getPageInfo",
+            callback:function(ret){
+                //处理数并返回给controller
+                callback && typeof callback == "function" && callback(ret);
+            }
+        });
     }
-};
+}
 
-export default indexModel;
+export default IndexModel;

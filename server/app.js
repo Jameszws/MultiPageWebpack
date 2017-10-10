@@ -14,6 +14,7 @@ var NODE_ENV = process.env.NODE_ENV || 'production';
 var webpackConfig = NODE_ENV =="production"? require('../config/webpack.prod.config.js'):require('../config/webpack.dev.config.js');
 
 app.use('/src', express.static(path.resolve(__dirname, "..","src")));
+app.use('/static', express.static(path.resolve(__dirname, "..","static")));
 app.set('port', 8090);
 app.engine('.html', require('ejs').__express);
 app.set('view engine', 'html');

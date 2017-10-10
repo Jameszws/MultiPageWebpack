@@ -4,7 +4,7 @@
 const domain = 'http://ws.open.ctripcorp.com';
 const proxy = [
     {
-        url: '/endtoend-replace-service/api/pagehearderservice/json/GetPageInfo',
+        url: '/endtoend-replace-service/api/pagehearderservice/json/getPageInfo',
         target: domain
     }
 ];

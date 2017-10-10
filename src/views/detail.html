@@ -11,8 +11,8 @@
 <body>
     <div>
         detail page
-    </div>
-     <% if(process.env.NODE_ENV=="development"){ %>
+    </div>    
+    <% if(process.env.NODE_ENV=="development"){ %>
         <script src="../dev/common.js"></script>
         <script src="../dev/detailController.js"></script>
     <% }else if(process.env.NODE_ENV=="production"){ %>

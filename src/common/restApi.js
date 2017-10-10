@@ -1,46 +1,54 @@
 /*
 * rest 统一接口请求
 */
-var restApi = {
+class RestApi {
     
     //get 请求
-    get:function(url,params,callback){
+    get(options){
         $.ajax({
-            url:url,
+            url:options.url,
             type:"GET",
-            data:params,
-            dataType:"json",
+            headers:options.headers?options.headers:{},
+            timeout:options.timeout?options.timeout:3000,
+            data:options.params?options.params:{},
+            dataType:options.dataType?options.dataType:"json",
+            async:options.async?options.async:"async",
+            contentType:options.contentType?options.contentType:"application/x-www-form-urlencoded",
             success:function(ret){
                 //ret是接口返回的数据，传到controller中
-                callback && typeof callback == "function" && callback({
+                options.callback && typeof options.callback == "function" && options.callback({
                     isSuccess:true,
                     ret:ret
                 });
             },
             error:function(err){                
-                callback && typeof callback == "function" && callback({
+                options.callback && typeof options.callback == "function" && options.callback({
                     isSuccess:false
                 });
             }
         });
-    },
+    }
     
     //post 请求
-    post:function(url,params,callback){
+    post(options){
         $.ajax({
-            url:url,
+            url:options.url,
             type:"POST",
-            data:params,
-            dataType:"json",
+            headers:options.headers?options.headers:{},
+            timeout:options.timeout?options.timeout:3000,
+            data:options.params?options.params:{},
+            dataType:options.dataType?options.dataType:"json",
+            async:options.async?options.async:"async",
+            contentType:options.contentType?options.contentType:"application/x-www-form-urlencoded",
             success:function(ret){
                 //ret是接口返回的数据，传到controller中                
-                callback && typeof callback == "function" && callback({
+                options.callback && typeof options.callback == "function" && options.callback({
                     isSuccess:true,
                     ret:ret
                 });
             },
             error:function(err){                
-                callback && typeof callback == "function" && callback({
+                options.callback && typeof options.callback == "function" && options.callback({
                     isSuccess:false
                 });
             }
@@ -48,4 +56,4 @@ var restApi = {
     }
 }
 
-export default restApi;
+export default RestApi;

@@ -29,13 +29,13 @@ module.exports = {
 
     module: {
         loaders: [
-            { test: /\.js$/,loader: 'babel-loader',exclude: /node_modules/ },
+            { test: /\.js$/,loaders: 'babel-loader',exclude: /node_modules/,query: {presets: ['es2015','stage-0'],plugins: ['transform-runtime']} },
             { test: /\.css$/,loaders: ['style-loader', 'css-loader'] },
-            { test: /\.(png|jpg|jpeg|gif)$/,loader: 'url-loader?limit=8192&name=images/[name].[ext]'},
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?name=images/[name].[ext]" },
-            { test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000&name=images/[name].[ext]" },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream&name=images/[name].[ext]" },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml&name=images/[name].[ext]" },
+            { test: /\.(png|jpg|jpeg|gif)$/,loaders: 'url-loader?limit=8192&name=images/[name].[ext]'},
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loaders: "file-loader?name=images/[name].[ext]" },
+            { test: /\.(woff|woff2)$/, loaders:"url-loader?prefix=font/&limit=5000&name=images/[name].[ext]" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loaders: "url-loader?limit=10000&mimetype=application/octet-stream&name=images/[name].[ext]" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loaders: "url-loader?limit=10000&mimetype=image/svg+xml&name=images/[name].[ext]" },
         ]
     },
 
@@ -45,15 +45,6 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        }),
-
-        new webpack.LoaderOptionsPlugin({
-            options:{
-                babel: {
-                    presets: ['es2015','stage-0'],
-                    plugins: ['transform-runtime']
-                }
-            }
         }),
         
         new commonsPlugin('common'),
