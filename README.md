@@ -13,6 +13,7 @@
 |--dist       压缩文件 <br/>
 |<br/>
 |--server      dev环境服务 <br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--app.js<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--proxy.config.js<br/>
