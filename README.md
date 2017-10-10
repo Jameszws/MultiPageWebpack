@@ -30,7 +30,6 @@
 |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|--util.js         公共代码 <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--static          静态资源文件 <br/>
-|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|--css         样式文件 <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
