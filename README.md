@@ -3,8 +3,11 @@
 项目结构说明
 
 |--config     webpack配置 <br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.build.js<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.dev.config.js<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.prod.config.js<br/>
 |<br/>
 |--dist       压缩文件 <br/>
