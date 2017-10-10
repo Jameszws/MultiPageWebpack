@@ -14,6 +14,7 @@
 |<br/>
 |--server      dev环境服务 <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--app.js<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--proxy.config.js<br/>
 |<br/>
 |--src        代码源文件 <br/>
