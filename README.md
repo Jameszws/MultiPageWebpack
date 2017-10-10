@@ -2,21 +2,21 @@
 
 项目结构说明
 
-|--config       (webpack配置) <br/>
+|--config         (webpack配置) <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.build.js  <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-|&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.dev.config.js (dev环境打包配置)<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.dev.config.js     (dev环境打包配置)<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-|&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.prod.config.js  (生产环境打包配置)<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|--webpack.prod.config.js    (生产环境打包配置)<br/>
 |<br/>
 |--dist         (压缩文件) <br/>
 |<br/>
 |--server       (dev环境服务) <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-|&nbsp;&nbsp;&nbsp;&nbsp;|--app.js   (dev环境服务)<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|--app.js    (dev环境服务)<br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
-|&nbsp;&nbsp;&nbsp;&nbsp;|--proxy.config.js   (代理服务，解决dev跨域问题)<br/>
+|&nbsp;&nbsp;&nbsp;&nbsp;|--proxy.config.js     (代理服务，解决dev跨域问题)<br/>
 |<br/>
 |--src          (代码源文件) <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|<br/>
@@ -42,6 +42,6 @@
 |&nbsp;&nbsp;&nbsp;&nbsp;| <br/>
 |&nbsp;&nbsp;&nbsp;&nbsp;|--views     (页面)<br/>
 |  
-|--package.json  (包管理文件) <br/>
+|--package.json   (包管理文件) <br/>
 |<br/>
-|--README.md     (项目说明)
+|--README.md      (项目说明)
