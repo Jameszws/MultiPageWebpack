@@ -1,6 +1,8 @@
 /*
 * detail 控制器
 */
+import "../static/css/common.css";
+
 import BaseController from "./baseController.js";
 
 class  DetailController extends BaseController {

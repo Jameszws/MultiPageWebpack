@@ -1,4 +1,6 @@
-
+/*
+* webpack配置打包
+*/
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.prod.config');
 

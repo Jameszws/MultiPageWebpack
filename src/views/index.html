@@ -4,7 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width,initial-scale=0,maximum-scale=1.0,minimum-scale=1.0">    
+    <meta name="viewport" content="width=device-width,initial-scale=0,maximum-scale=1.0,minimum-scale=1.0">
+    <% if(process.env.NODE_ENV=="production"){ %>
+        <link rel="stylesheet" href="../static/css/common.css?v=<%=fileVersion%>" />
+        <link rel="stylesheet" href="../static/css/indexController.css?v=<%=fileVersion%>" />
+    <%}%>
 </head>
 
 <body>
@@ -14,11 +18,11 @@
     </div>
     
     <% if(process.env.NODE_ENV=="development"){ %>
-        <script src="../dev/common.js"></script>
-        <script src="../dev/indexController.js"></script>
+        <script type="text/javascript" src="../dev/common.js"></script>
+        <script type="text/javascript" src="../dev/indexController.js"></script>
     <% }else if(process.env.NODE_ENV=="production"){ %>
-        <script src="../common.js?v=<%=fileVersion%>"></script>
-        <script src="../indexController.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript" src="../js/common.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript" src="../js/indexController.js?v=<%=fileVersion%>"></script>
     <%}%>    
 </body>
 </html>
