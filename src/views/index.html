@@ -18,11 +18,11 @@
     </div>
     
     <% if(process.env.NODE_ENV=="development"){ %>
-        <script type="text/javascript" src="../dev/common.js"></script>
-        <script type="text/javascript" src="../dev/indexController.js"></script>
+        <script type="text/javascript" src="../dev/common.min.js"></script>
+        <script type="text/javascript" src="../dev/indexController.min.js"></script>
     <% }else if(process.env.NODE_ENV=="production"){ %>
-        <script type="text/javascript" src="../js/common.js?v=<%=fileVersion%>"></script>
-        <script type="text/javascript" src="../js/indexController.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript" src="../js/common.min.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript" src="../js/indexController.min.js?v=<%=fileVersion%>"></script>
     <%}%>    
 </body>
 </html>

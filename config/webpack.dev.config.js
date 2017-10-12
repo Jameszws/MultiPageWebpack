@@ -12,13 +12,13 @@ module.exports = {
 
     entry:{
         indexController:['./src/controllers/indexController.js'],
-        detailController:['./src/controllers/detailController.js'],        
+        detailController:['./src/controllers/detailController.js'],
     }, //多页应用，多个入口文件
     
     output: {
         publicPath:"/dev/",
         path: path.resolve(__dirname, '..', 'dist'), //打包后的文件存放的地方
-        filename: '[name].js' //打包后输出文件的文件名
+        filename: '[name].min.js' //打包后输出文件的文件名
     },
     
     resolve: { 
@@ -29,14 +29,24 @@ module.exports = {
     },
     
     module: {
-        loaders: [
-            { test: /\.js$/,loaders: 'babel-loader',exclude: /node_modules/ },
-            { test: /\.css$/,loaders: ['style-loader', 'css-loader'] },
-            { test: /\.(png|jpg|jpeg|gif)$/,loaders: 'url-loader?limit=8192&name=images/[name].[ext]'},
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loaders: "file-loader?name=images/[name].[ext]" },
-            { test: /\.(woff|woff2)$/, loaders:"url-loader?prefix=font/&limit=5000&name=images/[name].[ext]" },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loaders: "url-loader?limit=10000&mimetype=application/octet-stream&name=images/[name].[ext]" },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loaders: "url-loader?limit=10000&mimetype=image/svg+xml&name=images/[name].[ext]" },
+        rules: [
+            { test: /\.css$/,use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015','stage-0'],
+                        plugins: ['transform-runtime']
+                    }
+                },
+                exclude: /node_modules/
+            },                  
+            { test: /\.(png|jpg|jpeg|gif)$/,use: 'url-loader?limit=8192&name=images/[name].[ext]'},
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: "file-loader?name=images/[name].[ext]" },
+            { test: /\.(woff|woff2)$/, use:"url-loader?prefix=font/&limit=5000&name=images/[name].[ext]" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, use: "url-loader?limit=10000&mimetype=application/octet-stream&name=images/[name].[ext]" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, use: "url-loader?limit=10000&mimetype=image/svg+xml&name=images/[name].[ext]" },
         ]
     },
 
@@ -46,15 +56,6 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery",
             "window.jQuery": "jquery"
-        }),
-
-        new webpack.LoaderOptionsPlugin({
-            options:{                
-                babel: {
-                    presets: ['es2015','stage-0'],
-                    plugins: ['transform-runtime']
-                }
-            }
         }),
         
         new commonsPlugin('common'),

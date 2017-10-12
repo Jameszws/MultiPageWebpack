@@ -9,7 +9,7 @@ const loadThirdJsDll = new LoadThirdJsDll();
 class BaseController {
 
     constructor(){
-       this.loadEruda();
+       this.loadEruda();       
     }
     
     //同步加载 eruda 插件

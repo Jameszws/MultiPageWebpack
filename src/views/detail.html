@@ -7,19 +7,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=0,maximum-scale=1.0,minimum-scale=1.0">
     <% if(process.env.NODE_ENV=="production"){ %>
         <link rel="stylesheet" href="../static/css/common.css?v=<%=fileVersion%>" />
+        <link rel="stylesheet" href="../static/css/detailController.css?v=<%=fileVersion%>" />
     <%}%>
 </head>
 
 <body>
-    <div>
+    <div class="test1">
         detail page
     </div>    
     <% if(process.env.NODE_ENV=="development"){ %>
-        <script type="text/javascript" src="../dev/common.js"></script>
-        <script type="text/javascript" src="../dev/detailController.js"></script>
+        <script type="text/javascript" src="../dev/common.min.js"></script>
+        <script type="text/javascript" src="../dev/detailController.min.js"></script>
     <% }else if(process.env.NODE_ENV=="production"){ %>
-        <script type="text/javascript"  src="../js/common.js?v=<%=fileVersion%>"></script>
-        <script type="text/javascript" src="../js/detailController.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript"  src="../js/common.min.js?v=<%=fileVersion%>"></script>
+        <script type="text/javascript" src="../js/detailController.min.js?v=<%=fileVersion%>"></script>
     <%}%>
 </body>
 </html>
